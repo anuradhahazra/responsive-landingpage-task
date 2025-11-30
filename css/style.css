@@ -1,0 +1,1230 @@
+/* Reset and Base Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #F7931E;
+    --color-primary-dark: #E8840D;
+    --color-dark: #000000;
+    --color-dark-grey: #1A1A1A;
+    --color-light-bg: #FFF8F2;
+    --color-captcha: #5A341F;
+    --color-text-dark: #2C2C2C;
+    --color-text-light: #FFFFFF;
+    --color-border: #E0E0E0;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --captcha-bg: #462512;
+    --container-max: 1400px;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: #D0D0D0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--color-light-bg);
+    border: 1px solid var(--Strokes, #FFE0C4)
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 1440px;
+    /* Fixed width */
+    height: 70px;
+    /* Hug height */
+
+    display: flex;
+    flex-direction: column;
+    /* Vertical flow */
+    justify-content: center;
+    /* Center items vertically */
+}
+
+.logo-text {
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--color-primary);
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1;
+    /* Clean spacing */
+}
+
+.logo-emoji {
+    color: var(--color-text-dark);
+}
+
+.logo-subtext {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-text-dark);
+    font-family: Figtree, sans-serif;
+    ;
+    margin-top: -2px;
+    /* Subtle lift for perfect alignment */
+    margin-left: 18px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    color: var(--color-text-dark);
+}
+
+.header-cta {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    width: 200px;
+    /* Fixed width */
+    height: 38px;
+    /* Fixed height */
+    padding: 8px 12px;
+    /* Top: 8, Right: 12, Bottom: 8, Left: 12 */
+
+    display: inline-flex;
+    flex-direction: row;
+    /* Horizontal flow */
+    align-items: center;
+    justify-content: center;
+    /* Center items */
+    gap: 12px;
+    /* Space between icon + text */
+
+    border: 1px solid #ccc;
+    /* Adjust color later as needed */
+    border-radius: 50px;
+    /* Pill-shaped button */
+
+    background: transparent;
+    /* You can override in .btn-primary or .btn-secondary */
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: 1px solid #DE6F0D;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-text-light);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #F5F5F5;
+}
+
+.btn-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: inline-block;
+}
+
+.call-back-icon {
+    Width: 12px;
+    Height: 21px;
+}
+
+/* ---------------------------------------------------------
+   NEW HERO SECTION (REPLACES OLD HERO CSS)
+----------------------------------------------------------*/
+
+/* HERO MAIN LAYOUT */
+.hero {
+    width: 100%;
+    display: flex;
+    background-color: var(--color-light-bg);
+    padding: 0;
+}
+
+.hero-inner {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    /* form and bg same height */
+}
+
+/* LEFT SIDE */
+.hero-left {
+    width: 1440px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* BACKGROUND IMAGE FULL COVER */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-bg-blur {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* PROMO CARD */
+.promo-card {
+    position: relative;
+    z-index: 3;
+    padding: 28px 28px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-left: 0;
+    /* starts from LEFT EDGE */
+    margin-top: 40px;
+    backdrop-filter: blur(8px);
+}
+
+/* DOCTOR IMAGE BIGGER + ALWAYS CORRECT ORIENTATION */
+.doctor-img {
+    position: absolute;
+    right: -40px;
+    bottom: 0;
+    z-index: 4;
+    width: 370px;
+    height: 416px;
+    /* bigger */
+    height: auto;
+    object-fit: contain;
+    transform: rotate(0deg) !important;
+    /* NEVER reverse */
+    pointer-events: none;
+}
+
+/* RIGHT FORM */
+
+.form-card {
+    width: 473px;
+    height: 450px;
+    top: 70px;
+    left: 967px;
+    gap: 20px;
+    opacity: 1;
+    border-width: 1px;
+    padding-top: 24px;
+    padding-right: 40px;
+    padding-bottom: 24px;
+    padding-left: 40px;
+}
+
+.form-span {
+    font-family: Figtree;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+/* FORM INPUTS */
+.form-input {
+    width: 393px;
+    padding: 12px;
+    border: 1px solid var(--Strokes, #FFE0C4);
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+/* Captcha Row — Flex Container */
+.captcha-row {
+    display: flex;
+    width: 100%;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+/* Left Input — Rounded Left Side */
+.captcha-input {
+    width: 283px;
+    height: 38px;
+
+    padding: 17px 16px;
+    font-size: 14px;
+
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-right: none;
+    border: 1px solid var(--Strokes, #FFE0C4);
+
+    outline: none;
+    flex-shrink: 0;
+}
+
+/* Right Box — Rounded Right Side */
+.captcha-box {
+    width: 110px;
+    height: 38px;
+
+    padding: 17px 16px;
+    background: #462512;
+    /* Brown */
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+
+    flex-shrink: 0;
+}
+
+/* Checkbox Row */
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 18px 0;
+    width: 366px;
+}
+
+/* Checkbox */
+.form-checkbox {
+    margin-top: 4px;
+    background: #FFFFFF;
+    width: 19;
+    height: 19;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+/* Label */
+.checkbox-label {
+    font-size: 12px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.checkbox-label a {
+    color: #303030;
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 393px;
+    padding: 12px 20px;
+    height: 42px;
+
+    border-radius: 24px;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero-inner {
+        flex-direction: column;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .doctor-img {
+        right: 0;
+        width: 250px;
+    }
+
+    .promo-card {
+        width: 95%;
+    }
+}
+
+/* Dark Section Styles */
+.section-light {
+    background-color: white;
+    color: var(--color-text-light);
+    padding: 30px 0;
+}
+
+.section-title {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--Head-Text, #1A1A1A);
+    font-family: Figtree, sans-serif;
+    font-weight: 700px;
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0%;
+}
+
+.section-subtitle {
+    text-align: center;
+    opacity: 0.9;
+    color: var(--Head-Text, #1A1A1A);
+    font-family: Figtree, sans-serif;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+.section-title-dark {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-text-dark);
+}
+
+/* Transformations Section */
+/* Main 4-column row */
+.transformations-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Card container */
+.transformation-card {
+    width: 295px;
+    text-align: left;
+}
+
+/* Image box */
+.transformation-image {
+    width: 295px;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* Row containing name + location */
+.info-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* name left, city right */
+    align-items: center;
+    /* keeps them on same level */
+}
+
+/* Patient name */
+.patient-name {
+    font-family: Figtree, sans-serif;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}
+
+/* Patient city */
+.patient-location {
+    font-family: Figtree, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--Orange, #F58420);
+}
+
+
+/* Why Choose Section */
+.why-choose-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 18px;
+    color: var(--color-text-light);
+}
+
+.benefit-icon {
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.why-choose-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 18px;
+}
+
+/* Testimonials Section */
+/* Main layout: GIF + row of 5 images */
+/* Outer container matches previous section spacing */
+.testimonials-container {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Flex layout */
+.testimonials-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Each card */
+.patient-card {
+    width: 224px;
+}
+
+/* Image sizes */
+.patient-photo {
+    width: 224px;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* GIF has same size as image (as requested) */
+.gif-box {
+    border-radius: 10px;
+}
+
+/* Text layout */
+.patient-info {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Name */
+.patient-name {
+    font-family: Figtree, sans-serif;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 100%;
+    margin: 0;
+}
+
+/* City */
+.patient-city {
+    font-family: Figtree, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 100%;
+    margin: 4px 0 0;
+    opacity: 0.8;
+    color: #777777;
+}
+
+/* Role (orange) */
+.patient-role {
+    font-family: Figtree, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #F58420;
+    margin: 0;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Tablets (keeps spacing on left/right) */
+@media (max-width: 1024px) {
+    .testimonials-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .testimonials-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .patient-card {
+        width: 47%;
+        /* two per row */
+    }
+
+    .patient-photo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Extra Small */
+@media (max-width: 480px) {
+    .patient-card {
+        width: 100%;
+        /* 1 card per row */
+    }
+}
+
+/* Appointment Section */
+/* --- Section Wrapper --- */
+.consultation-form {
+    width: 1296px;
+    height: auto;
+    opacity: 1;
+    gap: 24px;
+}
+
+.appointment-section {
+    padding: 15px !important;
+    background: #fef8f3;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Figtree, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* --- Form Card --- */
+.form-card-dark {
+    background: #fff8f2;
+    border-radius: 10px;
+    padding: 16px 12px;
+}
+
+/* FLEX ROW FOR INPUTS */
+.input-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* TEXT INPUT STYLING (Name + Phone) */
+.form-input-dark {
+    width: 416px;
+    height: 38px;
+    padding: 17px 16px;
+    border: 1px solid #F3C9A9;
+    border-radius: 24px;
+    font-family: Figtree;
+    font-size: 14px;
+    outline: none;
+}
+
+/* CAPTCHA GROUP EXACT Figma Data */
+.captcha-group {
+    display: flex;
+    width: 306px;
+    height: 38px;
+}
+
+/* Left CAPTCHA input */
+.captcha-input-new {
+    width: 100%;
+    height: 100%;
+    padding: 17px 16px;
+    border: 1px solid #F3C9A9;
+    border-right: none;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    font-family: Figtree;
+    font-size: 14px;
+    outline: none;
+}
+
+/* CAPTCHA Box Right Side */
+.captcha-box-new {
+    width: 120px;
+    height: 100%;
+    background: #4A2E1A;
+    color: #fff;
+    font-family: Figtree;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.checkbox-button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* checkbox + label container */
+.checkbox-group-new {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-left: 390px;
+    width: 564px;
+    margin-top: 40px;
+    /* Your Figma width */
+}
+
+/* ensure label wraps correctly starting under the text, not at the right side */
+.checkbox-label-new {
+    font-family: Figtree;
+    font-size: 12px;
+    line-height: 130%;
+    color: #333;
+    display: block;
+    text-align: left;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+
+.form-checkbox-new {
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    border-radius: 4px;
+    opacity: 1;
+    border-width: 1px;
+    border: 1px solid #FFE0C4 !important;
+}
+
+.checkbox-label-new a {
+    color: #303030;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* BUTTON EXACT FIGMA SPECS */
+.btn-submit-new {
+    width: 306px;
+    height: 38px;
+    padding: 16px;
+    border-radius: 24px;
+    background: #F58A1F;
+    color: white;
+    font-family: Figtree;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin: 20px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .input-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-input-dark,
+    .captcha-group {
+        width: 100%;
+    }
+
+    .checkbox-button-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-submit-new {
+        width: 100%;
+    }
+
+    .checkbox-group-new {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+.btn-plan:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GRID layout */
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 80px;
+}
+
+@media (min-width: 768px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* FAQ Question Row */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.faq-text {
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    color: #1a1a1a;
+}
+
+/* + Icon styling */
+.faq-icon {
+    width: 12px;
+    height: 12px;
+    color: #EA7D28;
+    font-size: 22px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    margin-bottom: 28px;
+}
+
+/* Divider line */
+.faq-divider {
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+/* Hidden answers */
+.faq-answer {
+    display: none;
+    padding: 10px 0 5px 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--Brown, #462512);
+    ;
+    padding: 40px 0;
+}
+
+.footer-content {
+    width: 1320px;
+    height: 69px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.footer-logo {
+    width: 174px;
+    height: 69px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2ND PART WRAPPER — 837 × 69 */
+.footer-text {
+    width: 837px;
+    min-height: 69px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* as per your layout */
+    opacity: 1;
+}
+
+/* 2A — Links Row (361 × 11, gap 27px) */
+.footer-links {
+    width: 361px;
+    height: 11px;
+    display: flex;
+    gap: 27px;
+    opacity: 1;
+    justify-content: end;
+}
+
+/* Link items */
+.footer-link {
+    color: #FFFFFF;
+    font-family: Figtree, sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 150%;
+    text-decoration: none;
+}
+
+.horizontal-line {
+    width: 837px;
+    height: 0px;
+    border-bottom: 1px solid #FFFFFF;
+    opacity: 1;
+    justify-content: end;
+
+}
+
+.footer-copyright {
+    width: 800px;
+    height: 10px;
+
+    font-family: Figtree, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+
+    opacity: 1;
+    margin: 0 auto;
+    /* centers the block */
+    justify-content: end;
+}
+
+.footer {
+    background: var(--Brown, #462512);
+    padding: 40px 0 25px;
+    color: #FFFFFF;
+    font-family: "Figtree", sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.logo-text {
+    font-size: 48px;
+    font-weight: 600;
+    color: #F67A19;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .treatments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-choose-content {
+        grid-template-columns: 1fr;
+    }
+
+    .find-us-content {
+        grid-template-columns: 1fr;
+    }
+
+    .guidance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-left {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-right {
+        padding: 30px 20px;
+    }
+
+    .hero-form {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stats-track {
+        gap: 40px;
+    }
+
+    .form-card,
+    .form-card-dark {
+        padding: 30px 20px;
+    }
+
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left {
+        min-height: 350px;
+    }
+
+    .hero-content {
+        padding: 30px 15px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-right {
+        padding: 20px 15px;
+    }
+
+    .hero-form {
+        padding: 25px 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .stats-track {
+        gap: 30px;
+    }
+
+    .stat-item {
+        gap: 10px;
+    }
+
+    .stat-icon {
+        font-size: 32px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+}
+
+
+/* Footer mobile stacked */
+@media (max-width: 700px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-copyright {
+        max-width: 358px;
+        width: 100%;
+    }
+}
+
+/* Mid-range screens */
+@media (min-width: 860px) and (max-width: 1024px) {
+    .form-card {
+        padding: 22px;
+    }
+
+    .doctor-img {
+        width: 320px;
+        right: -20px;
+    }
+}
+
+/* Desktop wide screens */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 24px;
+    }
+}
+
+/* Accessibility focus states */
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid rgba(247, 147, 30, 0.12);
+    outline-offset: 2px;
+}
+
+
+/* tablet and desktop show 2 columns */
+@media (min-width: 768px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* responsive for appointment form */
+@media (max-width: 992px) {
+    .input-row { flex-direction: column; gap: 12px; }
+    .form-input-dark, .captcha-group { width: 100%; flex: 1 1 100%; }
+    .checkbox-button-row { flex-direction: column; align-items: flex-start; }
+    .btn-submit-new { width: 100%; }
+    .checkbox-group-new { width: 100%; margin-left: 0; }
+}
+
+
+/* responsive adjustments for testimonials */
+@media (max-width: 420px) {
+    .patient-card {
+        width: 90%;
+        flex: 0 0 90%;
+        margin-right: 8px;
+    }
+    .patient-photo { height: auto; }
+}
