@@ -52,7 +52,7 @@ img {
 /* Header Styles */
 .header {
     background-color: var(--color-light-bg);
-    border-bottom: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     position: sticky;
     top: 0;
     z-index: 90;
@@ -92,7 +92,6 @@ img {
     color: var(--color-text-dark);
     font-family: Figtree, sans-serif;
     margin-top: -2px;
-    margin-left: 18px;
     letter-spacing: 4px;
     font-size: 14px;
     color: var(--color-text-dark);
@@ -164,9 +163,9 @@ img {
 .hero-inner {
     width: 100%;
     max-width: var(--container-max);
-    margin: 0 auto;
     display: flex;
-    flex-direction: column-reverse; /* mobile-first: form above for easier access */
+    flex-direction: column-reverse;
+    /* mobile-first: form above for easier access */
     gap: 18px;
     padding: 0 20px;
 }
@@ -179,14 +178,17 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0; /* remove any container padding/margin */
-    padding: 0; /* remove left/right spacing */
+    margin: 0;
+    /* remove any container padding/margin */
+    padding: 0;
+    /* remove left/right spacing */
 }
 
 /* BACKGROUND IMAGE FULL COVER */
 .hero-bg {
     position: absolute;
-    inset: 0; /* fill parent */
+    inset: 0;
+    /* fill parent */
     z-index: 1;
 }
 
@@ -207,10 +209,13 @@ img {
     position: relative;
     z-index: 3;
     padding: 28px;
-    width: auto; /* let it adjust naturally */
-    max-width: 450px; /* optional to prevent too wide on large screens */
-    margin-left: 0; /* flush left */
-    backdrop-filter: blur(8px);
+    width: auto;
+    /* let it adjust naturally */
+    max-width: 450px;
+    /* optional to prevent too wide on large screens */
+    margin-left: 0;
+    /* flush left */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
 }
 
 .promo-card h1 {
@@ -231,13 +236,14 @@ img {
 /* DOCTOR IMAGE BIGGER + ALWAYS CORRECT ORIENTATION */
 .doctor-img {
     position: absolute;
-    right: -24px; /* slightly outside to mimic original */
     bottom: 0;
+    right: 150px;
     z-index: 4;
     width: 360px;
     height: auto;
     object-fit: contain;
-    transform: rotate(0deg) !important;
+    transform: scaleX(-1);
+    /* <-- This flips left ↔ right */
     pointer-events: none;
 }
 
@@ -384,25 +390,42 @@ img {
     }
 
     .promo-card {
-        margin-left: 24px;
         margin-top: 40px;
-        max-width: 62%;
-    }
-
-    .doctor-img {
-        right: -40px;
-        width: 370px;
+        max-width: 74%;
     }
 }
 
 /* Tight small screens adjustments */
 @media (max-width: 480px) {
-    .logo-text { font-size: 28px; }
-    .promo-card { max-width: 94%; margin: 14px; padding: 16px; }
-    .doctor-img { width: 220px; right: -6px; bottom: 0; }
-    .form-card { padding: 16px; }
-    .captcha-box { min-width: 84px; padding: 8px 10px; font-size: 13px; }
-    .btn { font-size: 14px; padding: 8px 12px; }
+    .logo-text {
+        font-size: 28px;
+    }
+
+    .promo-card {
+        max-width: 94%;
+        margin: 14px;
+        padding: 16px;
+    }
+
+    .doctor-img {
+        width: 220px;
+        right: -6px;
+    }
+
+    .form-card {
+        padding: 16px;
+    }
+
+    .captcha-box {
+        min-width: 84px;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }
 
 /* ---------------------------
@@ -454,8 +477,9 @@ img {
 .transformations-row::-webkit-scrollbar {
     height: 8px;
 }
+
 .transformations-row::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.08);
+    background: rgba(0, 0, 0, 0.08);
     border-radius: 6px;
 }
 
@@ -566,7 +590,10 @@ img {
         flex: 0 0 90%;
         margin-right: 8px;
     }
-    .patient-photo { height: auto; }
+
+    .patient-photo {
+        height: auto;
+    }
 }
 
 /* -------------------------
@@ -597,7 +624,7 @@ img {
     background: #fff8f2;
     border-radius: 10px;
     padding: 16px 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
 }
 
 /* FLEX ROW FOR INPUTS */
@@ -643,7 +670,8 @@ img {
     outline: none;
 }
 
-.captcha-box-new, .captcha-group .captcha-box {
+.captcha-box-new,
+.captcha-group .captcha-box {
     min-width: 96px;
     height: 100%;
     background: #4A2E1A;
@@ -712,11 +740,30 @@ img {
 
 /* responsive for appointment form */
 @media (max-width: 992px) {
-    .input-row { flex-direction: column; gap: 12px; }
-    .form-input-dark, .captcha-group { width: 100%; flex: 1 1 100%; }
-    .checkbox-button-row { flex-direction: column; align-items: flex-start; }
-    .btn-submit-new { width: 100%; }
-    .checkbox-group-new { width: 100%; margin-left: 0; }
+    .input-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-input-dark,
+    .captcha-group {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .checkbox-button-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-submit-new {
+        width: 100%;
+    }
+
+    .checkbox-group-new {
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
 /* -------------------------
@@ -864,18 +911,18 @@ img {
 }
 
 .horizontal-line {
-    width: 100%;
+    width: 70%;
     height: 1px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    margin: 6px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.95);
+    margin-left: auto;
 }
 
 .footer-copyright {
     font-family: Figtree, sans-serif;
     font-size: 13px;
-    color: rgba(255,255,255,0.95);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.4;
-    text-align: center;
+    text-align: right;
 }
 
 /* Footer mobile stacked */
@@ -886,8 +933,15 @@ img {
         text-align: center;
         gap: 12px;
     }
-    .footer-links { justify-content: center; }
-    .footer-copyright { max-width: 358px; width: 100%; }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-copyright {
+        max-width: 358px;
+        width: 100%;
+    }
 }
 
 /* -------------------------
@@ -896,20 +950,36 @@ img {
 
 /* Mid-range screens */
 @media (min-width: 860px) and (max-width: 1024px) {
-    .form-card { padding: 22px; }
-    .doctor-img { width: 320px; right: -20px; }
+    .form-card {
+        padding: 22px;
+    }
+
+    .doctor-img {
+        width: 320px;
+        right: -20px;
+    }
 }
 
 /* Desktop wide screens */
 @media (min-width: 1200px) {
-    .container { padding: 0 24px; }
+    .container {
+        padding: 0 24px;
+    }
 }
 
 /* Accessibility focus states */
-a:focus, button:focus, input:focus {
-    outline: 3px solid rgba(247,147,30,0.12);
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid rgba(247, 147, 30, 0.12);
     outline-offset: 2px;
 }
 
-/* Keep any remaining original selectors (no removal) */
-/* This file ensured responsiveness while preserving your original classes and visual rules. */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* doctor shows first */
+    }
+    .hero-left {
+        margin-top: 20px;
+    }
+}
