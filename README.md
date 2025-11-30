@@ -101,3 +101,13 @@ my-landing-page/
 - Add more interactive animations
 - Optimize images for web performance
 
+## Assignment Screenshots
+Header & Hero banner section
+[https://drive.google.com/file/d/1TcwFcL1Oc32l70mdREirTiH9TYqVrI8b/view?usp=sharing]
+Patient's say section
+[https://drive.google.com/file/d/1dGpiLR7qf7FRNxIrvLVxC7piSI1Y9yCl/view?usp=sharing]
+Book appointment & FAQ section
+[https://drive.google.com/file/d/1kN9bB0wBnJNyts58-_o_m43oxgb7SgtJ/view?usp=sharing]
+Footer Section
+[https://drive.google.com/file/d/1kWdpDZYqBQ5sYma2klfmprtr3W1IqITe/view?usp=sharing]
+
